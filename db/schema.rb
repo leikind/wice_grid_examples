@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20090907214632) do
 
   create_table "project_roles", :force => true do |t|
     t.string   "name"
+    t.boolean  "can_close_tasks"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20090907214632) do
     t.integer  "relevant_version_id"
     t.integer  "expected_version_id"
     t.float    "estimated_time"
+    t.boolean  "archived"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

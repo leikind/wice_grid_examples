@@ -1,10 +1,16 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
-
 class ApplicationController < ActionController::Base
-  helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  helper :all 
+  protect_from_forgery 
 
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+  session :session_key => '_rails_root_session_id'
+  layout 'common'
+
+  before_filter :setup_ui
+
+  protected
+
+  def setup_ui
+  end
 end
+
+

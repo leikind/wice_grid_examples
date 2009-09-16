@@ -16,8 +16,8 @@ namespace :wg do
       Priority.create!(:position => i, :name => priority_name)
     end
 
-    %w(Manager Developer QualityAssurance Customer).each do |role_name|
-      ProjectRole.create!(:name => role_name)
+    %w(Manager Customer Developer QualityAssurance).each_with_index do |role_name, i|
+      ProjectRole.create!(:name => role_name, :can_close_tasks => i < 2)
     end
 
     %w(Resolved Duplicate New Verified Assigned Started Cancelled Postponed Closed).each do |status_name|
@@ -85,7 +85,8 @@ namespace :wg do
         :expected_version => (rand(2) == 0 ? nil : project.versions.rand),
         :estimated_time => rand(20) + 1,
         :created_at => (rand(100) + 100).days.ago,
-        :updated_at => rand(100).days.ago
+        :updated_at => rand(100).days.ago,
+        :archived => rand(10) == 0
       )
       
     end

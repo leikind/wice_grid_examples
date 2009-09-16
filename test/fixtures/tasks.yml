@@ -11,7 +11,6 @@ one:
   relevant_version_id: 1
   expected_version_id: 1
   estimated_time: 1.5
-  category_id: 1
 
 two:
   title: MyString
@@ -24,4 +23,3 @@ two:
   relevant_version_id: 1
   expected_version_id: 1
   estimated_time: 1.5
-  category_id: 1

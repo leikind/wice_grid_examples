@@ -11,7 +11,7 @@ class CreateTasks < ActiveRecord::Migration
       t.integer :relevant_version_id
       t.integer :expected_version_id
       t.float :estimated_time
-
+      t.boolean :archived
       t.timestamps
     end
   end
