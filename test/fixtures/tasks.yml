@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  created_by_id: 1
+  project_id: 1
+  due_date: 2009-09-07
+  priority_id: 1
+  status_id: 1
+  relevant_version_id: 1
+  expected_version_id: 1
+  estimated_time: 1.5
+  category_id: 1
+
+two:
+  title: MyString
+  description: MyText
+  created_by_id: 1
+  project_id: 1
+  due_date: 2009-09-07
+  priority_id: 1
+  status_id: 1
+  relevant_version_id: 1
+  expected_version_id: 1
+  estimated_time: 1.5
+  category_id: 1
