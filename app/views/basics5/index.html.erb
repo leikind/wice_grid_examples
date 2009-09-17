@@ -1,0 +1,17 @@
+<%= grid(@tasks_grid) do |g|
+
+  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+  g.column :column_name => 'Title', :attribute_name => 'title'
+
+  g.column  :column_name => 'Description', :attribute_name => 'description', :no_filter => true
+
+  # we show only tasks with archived == false, so this column is not needed
+  # g.column  :column_name => 'Archived', :attribute_name => 'archived' do |task|
+  #   task.archived? ? 'Yes' : 'No'
+  # end
+
+  g.column   do |task|
+    link_to('Edit', edit_task_path(task))
+  end
+end -%>
