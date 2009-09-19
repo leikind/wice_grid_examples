@@ -7,6 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :basics5
   map.resources :joining_tables
   map.resources :two_associations
+  map.resources :many_grids_on_page
   
   map.resources :tasks # just in order to have the helpers defined
   

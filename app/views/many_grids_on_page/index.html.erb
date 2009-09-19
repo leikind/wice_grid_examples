@@ -17,3 +17,19 @@
 end -%>
 
 
+<%= grid(@tasks_grid, :show_filters => :always) do |g|
+
+  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+  g.column :column_name => 'Title', :attribute_name => 'title'
+
+  g.column  :column_name => 'Description', :attribute_name => 'description', :no_filter => true
+
+  g.column :column_name => 'Added', :attribute_name => 'created_at' do |task|
+    task.created_at.to_s(:short)
+  end
+
+  g.column   do |task|
+    link_to('Edit', edit_task_path(task))
+  end
+end -%>

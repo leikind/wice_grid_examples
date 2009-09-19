@@ -20,7 +20,8 @@ class ApplicationController < ActionController::Base
       [:basics4_index_path, 'Basics: declaring attributes (2)', ['Blockless column definitions (see view code)', 'filters can be turned off with :no_filter => true', 'Changing the behavior of filter with :show_filters']],
       [:basics5_index_path, 'Basics: further on', ['Setting the initial order (see controller code)', 'changing the number of records per page (see controller code)', 'ActiveRecord conditions (see controller code)']],
       [:joining_tables_path, 'Joined tables', ['See :include in the controller','See :model_class in the view']],
-      [:two_associations_path, '2 associations to the same table', ['When there are two associations both referring to the same table, ActiveRecord constructs a query where the second join provides an alias for the joined table. To enable WiceGrid to order and filter by columns belonging to different associations  but originating from the same table, set <tt>:table_alias</tt> to this alias (see the view code)']]
+      [:two_associations_path, '2 associations to the same table', ['When there are two associations both referring to the same table, ActiveRecord constructs a query where the second join provides an alias for the joined table. To enable WiceGrid to order and filter by columns belonging to different associations  but originating from the same table, set <tt>:table_alias</tt> to this alias (see the view code)']],
+      [:many_grids_on_page_index_path, 'More than 1 grid on a page', ['Explicitly setting the name of the grid in the controller']],      
     ]
   end
 

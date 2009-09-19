@@ -33,6 +33,7 @@ ul, ol {
 
 #controller-code, #view-code {
   margin-top: 10px;
+  width: 500px;
 }
 
 /*    CodeRay */
@@ -42,6 +43,7 @@ ul, ol {
   font-family: 'Courier New', 'Terminal', monospace;
   color: #100;
   margin-bottom: 1em;
+
 }
 .CodeRay pre { margin: 0px; font-size: 12px }
 
