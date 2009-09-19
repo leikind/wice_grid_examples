@@ -6,14 +6,18 @@ html {
   font-family: "Lucida Grande", "Helvetica", "Arial", sans-serif; font-size: 12px; background-color: #fff; 
 }
 
+ul, ol {
+  list-style-position: inside; 
+}
+
 #sidebar {
   float: left;
   width: 150px;
   margin: 20px;
+  height: 500px;
 }
 
 #main {
-  float: left;
   padding-bottom: 100px;
 }
 

@@ -16,6 +16,11 @@
     task.archived? ? 'Yes' : 'No'
   end
 
+  g.column :column_name => 'Added' do |task|
+    task.created_at.to_s(:short)
+  end
+
+
   g.column   do |task|
     link_to('Edit', edit_task_path(task))
   end

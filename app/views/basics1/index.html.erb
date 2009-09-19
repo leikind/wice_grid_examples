@@ -17,6 +17,10 @@
   end
 
   g.column do |task|
+    task.created_at.to_s(:short)
+  end
+
+  g.column do |task|
     link_to('Edit', edit_task_path(task))
   end
 end -%>
