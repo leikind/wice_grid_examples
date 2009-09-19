@@ -1,8 +1,51 @@
-
 html {
   margin:0;
   padding:0;
   color:#000;
   background:#ffffff;
   font-family: "Lucida Grande", "Helvetica", "Arial", sans-serif; font-size: 12px; background-color: #fff; 
+}
+
+#sidebar {
+  float: left;
+  width: 150px;
+  margin: 20px;
+}
+
+#main {
+  float: left;
+  padding-bottom: 100px;
+}
+
+
+#sidebar  ul{
+  list-style-type: none;
+  padding-left: 0px;  
+}
+
+#sidebar  ul li{
+  margin-bottom: 10px;
+}
+
+#controller-code, #view-code {
+  margin-top: 10px;
+}
+
+/*    CodeRay */
+.CodeRay {
+  background-color: #f8f8f8;
+  border: 1px solid silver;
+  font-family: 'Courier New', 'Terminal', monospace;
+  color: #100;
+  margin-bottom: 1em;
+}
+.CodeRay pre { margin: 0px; font-size: 12px }
+
+table.CodeRay { border-collapse: collapse; width: 100%; padding: 2px }
+table.CodeRay td { padding: 2px 4px; vertical-align: top }
+
+.CodeRay .line_numbers, .CodeRay .no {
+  background-color: #eaeaea;
+  color: gray;
+  text-align: right;
 }

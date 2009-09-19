@@ -7,8 +7,7 @@ class Basics2Controller < ApplicationController
   protected
   
   def setup_ui
-    @page_title = 'Basics: a simple grid'
-    @description = 'Column names added'
+    @current_example_key = :basics2_index_path
   end
   
   

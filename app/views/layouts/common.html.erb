@@ -4,16 +4,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title><%= @page_title %></title>
+    <title><%= page_title %></title>
      <%= javascript_include_tag :defaults %>
      <%= stylesheet_link_tag 'application' %>
      
-     <%= include_wice_grid_assets %>  
+     <%= include_wice_grid_assets %>
+
   </head>
   <body>
+    <div id="sidebar">
+      <%= navigation_bar %>
+    </div>
     <div id="main">
-      <h1><%= @page_title %></h1>
-      <div><%= @description %></div>
+      <h1><%= page_title %></h1>
+      <div><%= page_description %></div>
+      
+      <%= link_to_function 'Controller code', 'toggleWithEffect($("controller-code"));' %>
+      <div id="controller-code" style="display: none;">
+        <%= controller_code %>
+      </div>
+      <br/>
+      
+      <%= link_to_function 'View code', 'toggleWithEffect($("view-code"));' %>
+      <div id="view-code" style="display: none;">
+        <%= view_code %>
+      </div>
       <%= yield %>
     </div>
   </body>

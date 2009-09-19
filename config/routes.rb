@@ -5,7 +5,12 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :basics3
   map.resources :basics4
   map.resources :basics5
-  map.resources :tasks
+  map.resources :joining_tables
+  
+  map.resources :tasks # just in order to have the helpers defined
+  
+  map.root :controller => 'basics1'
+    
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end

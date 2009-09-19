@@ -7,8 +7,7 @@ class Basics4Controller < ApplicationController
   protected
   
   def setup_ui
-    @page_title = 'Basics: a grid with filters'
-    @description = 'Blockless column definitions and turning off filter with :no_filter => true'
+    @current_example_key = :basics4_index_path
   end
   
 end

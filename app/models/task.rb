@@ -7,6 +7,6 @@ class Task < ActiveRecord::Base
   belongs_to :relevant_version, :class_name => 'Version'
   belongs_to :expected_version, :class_name => 'Version'
   
-  has_and_belongs_to_many :assigned_users, :class_name => 'User'
+  has_and_belongs_to_many :assigned_users, :class_name => 'User', :order => 'users.name'
   
 end

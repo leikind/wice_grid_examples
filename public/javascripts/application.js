@@ -1,2 +1,4 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+
+function toggleWithEffect(element){
+  new Effect[Element.visible(element) ? 'BlindUp' : 'BlindDown'](element, {duration: 0.25});
+}

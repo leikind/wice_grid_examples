@@ -7,7 +7,7 @@ class Basics1Controller < ApplicationController
   protected
   
   def setup_ui
-    @page_title = 'Basics: Most simple grid'
+    @current_example_key = :basics1_index_path
   end
   
   
