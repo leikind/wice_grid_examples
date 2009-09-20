@@ -1,0 +1,28 @@
+<table ><tr><td>
+<%= grid(@status_grid1, :show_filters => :always) do |g|
+
+  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+  g.column :column_name => 'Status Name', :attribute_name => 'name'
+
+  g.column  :column_name => 'Created' do |status|
+    status.created_at.to_s(:db) if status.created_at
+  end
+end -%>
+
+</td><td>
+
+<%= grid(@status_grid2, :show_filters => :always) do |g|
+
+  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+  g.column :column_name => 'Status Name', :attribute_name => 'name'
+
+  g.column  :column_name => 'Created' do |status|
+    status.created_at.to_s(:db) if status.created_at
+  end
+
+end -%>
+
+</td></tr></table>
+

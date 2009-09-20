@@ -1,0 +1,27 @@
+<%= grid(@tasks_grid, :show_filters => :always) do |g|
+
+  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+  g.column :column_name => 'Title', :attribute_name => 'title'
+
+  g.column :column_name => 'Priority', :attribute_name => 'name', :model_class => 'Priority' do |task|
+    task.priority.name if task.priority
+  end
+
+  g.column :column_name => 'Status', :attribute_name => 'name', :model_class => 'Status' do |task|
+    task.status.name if task.status
+  end
+
+  g.column :column_name => 'Project Name', :attribute_name => 'name', :model_class => 'Project' do |task|
+    task.project.name if task.project
+  end
+
+  g.column :column_name => 'Assigned To', :attribute_name => 'name', :model_class => 'User' do |task|
+    task.assigned_users.collect{|user| user.name}.to_sentence
+  end
+
+
+  g.column   do |task|
+    link_to('Edit', edit_task_path(task))
+  end
+end -%>

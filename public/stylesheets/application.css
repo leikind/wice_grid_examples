@@ -10,6 +10,11 @@ ul, ol {
   list-style-position: inside; 
 }
 
+td {
+  padding: 0 1em;
+}
+
+
 #sidebar {
   float: left;
   width: 150px;

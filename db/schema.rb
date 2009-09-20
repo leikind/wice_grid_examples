@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20090907214632) do
 
   create_table "statuses", :force => true do |t|
     t.string   "name"
+    t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
