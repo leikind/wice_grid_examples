@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
 
   protected
 
-
   def init_example_map
     @example_map = [
       [:basics1_index_path, 'Basics: most simple grid', []],
@@ -28,7 +27,7 @@ class ApplicationController < ActionController::Base
       
       [:custom_filters1_index_path, 'Custom filters (one table)', ['Grid 1: custom_filter defined by a hash', 'Grid 2: custom_filter defined by a array of two element array', 'Grid 3: custom_filter defined by a array of strings (each value is used as both the value and the label)', 'Grid 4: custom_filter defined :auto (produces query SELECT DISTINCT versions.status FROM versions)']],
       [:custom_filters2_index_path, 'Custom filters (joined tables)', ['Joined tables: declaring columns as main_table.foreign_key_id and overriding the ordering with :custom_order']],
-      [:custom_filters3_index_path, 'Custom filters (arrays)', ['']],
+      [:custom_filters3_index_path, 'Custom filters (method chains)', ['Compare the filter of "Found in version" generated with :auto and that of "Expected in version" generated with a method chain. Only tasks of one project are shown here, and because versions belong to projects, the filter generated with :auto will have options which will bring zero records.']],
     ]
   end
 
