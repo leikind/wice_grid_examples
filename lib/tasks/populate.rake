@@ -29,13 +29,16 @@ namespace :wg do
     end
     
     companies = Company.find(:all).index_by(&:name)
-
+    version_statuses = ['development', 'testing', 'production']
+    
     {'Ultimate Website' => {:customer => 'MNU', :supplier => 'Coders Unlimited', :versions => ['1.0', '1.1', '1.2', '2.0', '3.0']}, 
        'Super Game' => {:customer => 'MNU', :supplier => 'Shift-Command-4 Limited', :versions => ['1.0', '88.1', '99.0']}, 
        'Divine Firmware' => {:customer => 'SkyNet', :supplier => 'Coders Unlimited', :versions => ['6.0', '7.1', '8.0']}}.each do |project, data|
       project = Project.create!(:name => project, :customer => companies[data[:customer]], :supplier => companies[data[:supplier]])
 
-      data[:versions].each{|version| Version.create!(:name => version, :project => project)}
+      data[:versions].each{|version| 
+        Version.create!(:name => version, :project => project, :status => version_statuses[rand(3)])
+      }
     end
 
     projects = Project.find(:all, :include => :users)

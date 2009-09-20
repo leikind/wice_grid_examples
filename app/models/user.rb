@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
   
   has_many :user_project_participations
   has_many :projects, :through => :user_project_participations
+  
+  include ToDropdownMixin
 end

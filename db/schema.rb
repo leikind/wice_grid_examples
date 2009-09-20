@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(:version => 20090907214632) do
   create_table "versions", :force => true do |t|
     t.string   "name"
     t.integer  "project_id"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -26,8 +26,8 @@ class ApplicationController < ActionController::Base
       [:custom_ordering2_index_path, 'Custom ordering (2)', ['Overriding the default ordering of Status Name by field position from the joined table statuses']],
       
       
-      [:custom_filters1_index_path, 'Custom filters (arrays)', ['']],
-      [:custom_filters2_index_path, 'Custom filters (arrays)', ['']],
+      [:custom_filters1_index_path, 'Custom filters (one table)', ['Grid 1: custom_filter defined by a hash', 'Grid 2: custom_filter defined by a array of two element array', 'Grid 3: custom_filter defined by a array of strings (each value is used as both the value and the label)', 'Grid 4: custom_filter defined :auto (produces query SELECT DISTINCT versions.status FROM versions)']],
+      [:custom_filters2_index_path, 'Custom filters (joined tables)', ['Joined tables: declaring columns as main_table.foreign_key_id and overriding the ordering with :custom_order']],
       [:custom_filters3_index_path, 'Custom filters (arrays)', ['']],
     ]
   end
