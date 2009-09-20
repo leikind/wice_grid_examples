@@ -28,6 +28,15 @@ class ApplicationController < ActionController::Base
       [:custom_filters3_index_path, 'Custom filters (method chains)', ['Compare the filter of "Found in version" generated with :auto and that of "Expected in version" generated with a method chain. Only tasks of one project are shown here, and because versions belong to projects, the filter generated with :auto will have options which will bring zero records.']],
       [:null_values_path, 'Custom filters (null values)', ['Special treatment of "NULL" and "NOT NULL"']],
       [:buttons_path, 'Using custom submit/reset buttons', nil],
+      [:styling_index_path, 'Styling the grid', 
+        ['grid 1: adding a class to the table with :table_html_attrs',
+         'grid 1: adding a class to the header tr with :header_tr_html_attrs',
+         'grid 1: adding styles to all TDs of column "Version name" with :td_html_attrs',
+         'grid 2: adding  styles dynamically to a TR using g.row_attributes (adding yellow backround to versions in production)',
+         'grid 2: adding  styles dynamically to a TD returning a two row value from the column block',
+         ],
+      
+      ],
       
     ]
   end

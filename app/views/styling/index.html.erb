@@ -1,0 +1,52 @@
+<style>
+table.my-grid {
+  border: 1px solid red;
+}
+table.my-grid tr.my-header {
+  border: 1px solid blue;
+}
+</style>
+
+<table><tr><td>
+<%= grid(@versions_grid1, :show_filters => :always, 
+  :table_html_attrs => {:class => 'my-grid'}, :header_tr_html_attrs => {:class => 'my-header'}) do |g|
+
+  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+  g.column :column_name => 'Project', :attribute_name => 'name', :model_class => 'Project' do |version|
+    version.project.name if version.project
+  end
+
+  g.column :column_name => 'Version name', :attribute_name => 'name', :td_html_attrs => {:style => 'font-weight: bold; text-align: center'}
+
+  g.column :column_name => 'Status', :attribute_name => 'status', 
+           :custom_filter => {'Development' => 'development', 'Testing' => 'testing', 'Production' => 'production'}
+end -%>
+</td><td>
+  <%= grid(@versions_grid2, :show_filters => :always) do |g|
+    
+    g.row_attributes do |version|
+      if version.status == 'production'
+        {:style => 'background-color: rgb(255, 255, 204);'}
+      end
+    end
+
+    g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true do |version|
+      if version.id.to_s.index('9')
+        [version.id, {:style => 'background-color: rgb(255, 105, 104);'}]
+      else
+        version.id
+      end
+    end
+
+    g.column :column_name => 'Project', :attribute_name => 'name', :model_class => 'Project' do |version|
+      version.project.name if version.project
+    end
+
+    g.column :column_name => 'Version name', :attribute_name => 'name'
+
+    g.column :column_name => 'Status', :attribute_name => 'status', 
+             :custom_filter => [['Development', 'development'], ['Testing', 'testing'], ['Production', 'production']]
+  end -%>
+
+</td></tr><table>
