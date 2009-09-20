@@ -10,10 +10,11 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :many_grids_on_page
   map.resources :custom_ordering
   map.resources :custom_ordering2
-  
   map.resources :custom_filters1
   map.resources :custom_filters2
   map.resources :custom_filters3
+  map.resources :null_values
+  map.resources :buttons
   
   map.resources :tasks # just in order to have the helpers defined
   

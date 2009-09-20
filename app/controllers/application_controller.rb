@@ -23,11 +23,12 @@ class ApplicationController < ActionController::Base
       [:many_grids_on_page_index_path, 'More than 1 grid on a page', ['Explicitly setting the name of the grid in the controller']],
       [:custom_ordering_index_path, 'Custom ordering', ['In the first grid default ordering of the Status Name column is overridden by ordering by the length of statuses.name', 'In the second grid the Status Name column is ordered by a different field, statuses.position (usually used by acts_as_list)']],
       [:custom_ordering2_index_path, 'Custom ordering (2)', ['Overriding the default ordering of Status Name by field position from the joined table statuses']],
-      
-      
       [:custom_filters1_index_path, 'Custom filters (one table)', ['Grid 1: custom_filter defined by a hash', 'Grid 2: custom_filter defined by a array of two element array', 'Grid 3: custom_filter defined by a array of strings (each value is used as both the value and the label)', 'Grid 4: custom_filter defined :auto (produces query SELECT DISTINCT versions.status FROM versions)']],
       [:custom_filters2_index_path, 'Custom filters (joined tables)', ['Joined tables: declaring columns as main_table.foreign_key_id and overriding the ordering with :custom_order']],
       [:custom_filters3_index_path, 'Custom filters (method chains)', ['Compare the filter of "Found in version" generated with :auto and that of "Expected in version" generated with a method chain. Only tasks of one project are shown here, and because versions belong to projects, the filter generated with :auto will have options which will bring zero records.']],
+      [:null_values_path, 'Custom filters (null values)', ['Special treatment of "NULL" and "NOT NULL"']],
+      [:buttons_path, 'Using custom submit/reset buttons', nil],
+      
     ]
   end
 

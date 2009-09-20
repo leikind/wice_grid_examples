@@ -1,0 +1,17 @@
+<%= grid(@tasks_grid, :show_filters => :always) do |g|
+
+  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+  g.column :column_name => 'Title', :attribute_name => 'title'
+
+
+  g.column :column_name => 'Priority', :attribute_name => 'priority_id', 
+    :custom_filter => [['NOT DEFINED', 'null'], ['DEFINED', 'not null']] + Priority.to_dropdown do |task|
+    task.priority.name if task.priority
+  end
+
+
+  g.column   do |task|
+    link_to('Edit', edit_task_path(task))
+  end
+end -%>
