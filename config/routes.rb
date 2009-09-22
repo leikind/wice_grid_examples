@@ -16,6 +16,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :null_values
   map.resources :buttons
   map.resources :styling
+  map.resources :adding_rows
   
   map.resources :tasks # just in order to have the helpers defined
   

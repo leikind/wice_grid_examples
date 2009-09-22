@@ -34,10 +34,8 @@ class ApplicationController < ActionController::Base
          'grid 1: adding styles to all TDs of column "Version name" with :td_html_attrs',
          'grid 2: adding  styles dynamically to a TR using g.row_attributes (adding yellow backround to versions in production)',
          'grid 2: adding  styles dynamically to a TD returning a two row value from the column block',
-         ],
-      
-      ],
-      
+      ]],
+      [:adding_rows_path, 'Adding custom rows', nil],
     ]
   end
 
