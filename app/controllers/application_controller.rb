@@ -42,6 +42,7 @@ class ApplicationController < ActionController::Base
       [:dates_path, 'Date/Datetime helpers', ['Change between standard Rails date/datetime helpers and calendar helpers using :helper_style => :calendar or :helper_style => :standard ']],
       [:all_records_path, 'Removing link "All Records"', ['Hiding the "All Records" link with :allow_showing_all_records => false ']],
       [:csv_export_index_path, 'CSV Export', ['Controller: :enable_export_to_csv, :csv_file_name, export_grid_if_requested', 'View: placing helpers into partials of their own, :in_csv => false, :in_csv => true']],
+      [:detached_filters_path, 'Detached filters', ['Column filters defined by :detach_with_id and rendered by <%= grid_filter @tasks_grid, :id_of_the_filter  %>, take note of how the "grid" is used twice']],
     ]
   end
 

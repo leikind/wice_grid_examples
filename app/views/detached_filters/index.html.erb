@@ -1,0 +1,68 @@
+<%= grid(@tasks_grid, :show_filters => :always) do |g|
+
+  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+  g.column :column_name => 'Title', :attribute_name => 'title', :detach_with_id => :title_filter do |task|
+    link_to('Edit', edit_task_path(task.title))
+  end
+
+  g.column :column_name => 'Priority', :attribute_name => 'priority_id', 
+           :custom_filter => Priority.to_dropdown, :detach_with_id => :priority_filter do |task|
+    task.priority.name if task.priority
+  end
+
+  g.column :column_name => 'Status', :attribute_name => 'status_id', :custom_filter => Status.to_dropdown, 
+           :detach_with_id => :status_filter do |task|
+    task.status.name if task.status
+  end
+
+  g.column :column_name => 'Project Name', :attribute_name => 'project_id', 
+           :custom_filter => Project.to_dropdown, :detach_with_id => :project_filter do |task|
+    link_to_if(task.project, task.project.name, project_path(task.project) )
+  end
+
+  g.column  :column_name => 'Archived', :attribute_name => 'archived', :detach_with_id => :archived_filter do |task|
+    task.archived? ? 'Yes' : 'No'
+  end
+
+  g.column :column_name => 'Added', :attribute_name => 'created_at', :detach_with_id => :created_at_filter do |task|
+    task.created_at.to_s(:short)
+  end
+
+  g.column do |task|
+    link_to('Edit', edit_task_path(task))
+  end
+end -%>
+
+<table class="form">
+  <tr>
+    <td>Title</td>
+    <td><%= grid_filter @tasks_grid, :title_filter  %></td>
+  </tr>
+  <tr>
+    <td>Priority</td>
+    <td><%= grid_filter @tasks_grid, :priority_filter  %></td>
+  </tr>
+  <tr>
+    <td>Status</td>
+    <td><%= grid_filter @tasks_grid, :status_filter  %></td>
+  </tr>
+  <tr>
+    <td>Project</td>
+    <td><%= grid_filter @tasks_grid, :project_filter  %></td>
+  </tr>
+  <tr>
+    <td>Archived</td>
+    <td><%= grid_filter @tasks_grid, :archived_filter  %></td>
+  <tr>
+    <td>Added</td>
+    <td><%= grid_filter @tasks_grid, :created_at_filter  %></td>
+  </tr>
+  <tr>
+    <td><%= button_to_function "Reset",  reset_grid_javascript(@tasks_grid) %></td>
+    <td><%= button_to_function "Submit", submit_grid_javascript(@tasks_grid) %></td>
+  </tr>
+  
+</table>
+
+<%= grid(@tasks_grid) %>

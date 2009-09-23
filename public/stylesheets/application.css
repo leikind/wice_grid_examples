@@ -75,6 +75,15 @@ p {
   margin-top: 20px;
 }
 
+table.form td {
+  height: 2.5em;
+  padding: 0 1em;
+}
+
+table.form {
+  padding-bottom: 20px;
+}
+
 /*    CodeRay */
 .CodeRay {
   background-color: #f8f8f8;
