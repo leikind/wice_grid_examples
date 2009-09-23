@@ -9,7 +9,7 @@ class NoRecordsController < ApplicationController
   protected
 
   def setup_ui
-    @current_example_key = :no_records_path
+    @current_example_key = :all_records_path
   end
 
 end

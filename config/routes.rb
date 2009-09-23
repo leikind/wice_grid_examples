@@ -21,6 +21,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :erb_mode
   map.resources :integration_with_forms
   map.resources :dates
+  map.resources :all_records
   
   map.resources :tasks # just in order to have the helpers defined
   
