@@ -1,8 +1,8 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
-  def controller_code
-    filename = 'app/controllers/' + @current_example_map[0].to_s.sub(/(_index)?_path/, '') + '_controller.rb'
+  def controller_code(filename = nil)
+    filename ||= 'app/controllers/' + @current_example_map[0].to_s.sub(/(_index)?_path/, '') + '_controller.rb'
     code = ''
     index_started = false
     File.readlines(filename).each do |line|
@@ -11,15 +11,23 @@ module ApplicationHelper
       code << line if index_started
     end
     
-    CodeRay.scan(code, :ruby).div(:line_numbers => :table)
+    filename_and_code(filename, code, :ruby)
   end
   
-  def view_code
-    filename = 'app/views/' + @current_example_map[0].to_s.sub(/(_index)?_path/, '') + '/index.html.erb'
+  def view_code(filename = nil)
+    if filename.is_a? Array
+      return filename.collect{|fn| view_code(fn)}.join('')
+    elsif filename.nil?
+      filename =  'app/views/' + @current_example_map[0].to_s.sub(/(_index)?_path/, '') + '/index.html.erb'
+    end
     code = File.read(filename)
-    CodeRay.scan(code, :rhtml).div(:line_numbers => :table)
+    filename_and_code(filename, code, :rhtml)
   end
   
+  
+  def filename_and_code(filename, code, format)
+    content_tag(:div, filename, :class => 'filename') + CodeRay.scan(code, format).div(:line_numbers => :table)
+  end
 
   def page_title
     @current_example_map[1]
@@ -29,7 +37,7 @@ module ApplicationHelper
     if @current_example_map[2].blank?
       nil
     else
-      content_tag :ul do
+      content_tag :ul, :class => 'page-description' do
         @current_example_map[2].collect{|desc| content_tag(:li, desc) }
       end
     end

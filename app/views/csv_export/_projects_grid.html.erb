@@ -1,0 +1,17 @@
+<%= grid(@projects_grid, :show_filters => :always) do |g|
+
+  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+  g.column :column_name => 'Project Name', :attribute_name => 'name'
+  
+
+  g.column  :column_name => 'Customer company', :model_class => 'Company', :attribute_name => 'name' do |task|
+    task.customer.name if task.customer
+  end
+
+  g.column  :column_name => 'Supplier company', 
+            :model_class => 'Company', :attribute_name => 'name', :table_alias => ' suppliers_projects' do |task|
+    task.supplier.name if task.supplier
+  end
+
+end -%>

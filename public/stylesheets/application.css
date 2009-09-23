@@ -39,6 +39,7 @@ h1{
 #main {
   float: left;  
   padding-top: 10px;
+  padding-bottom: 50px;
   width: 80%;
 }
 
@@ -59,6 +60,19 @@ h1{
 
 p {
   margin-bottom: 10px;
+}
+.wice_grid_container{
+  padding-bottom: 30px;
+}
+
+.filename{
+  ont-family: monospace, Terminal, monospace;
+  font-size: 10px;
+}
+
+.page-description {
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 /*    CodeRay */

@@ -41,10 +41,13 @@ class ApplicationController < ActionController::Base
       [:integration_with_forms_path, 'Integration with other forms on page', ['Using helper dump_filter_parameters_as_hidden_fields(grid) to dump all grid parameters as hidden form fields']],
       [:dates_path, 'Date/Datetime helpers', ['Change between standard Rails date/datetime helpers and calendar helpers using :helper_style => :calendar or :helper_style => :standard ']],
       [:all_records_path, 'Removing link "All Records"', ['Hiding the "All Records" link with :allow_showing_all_records => false ']],
+      [:csv_export_index_path, 'CSV Export', ['Controller: :enable_export_to_csv, :csv_file_name, export_grid_if_requested', 'View: placing helpers into partials of their own, :in_csv => false, :in_csv => true']],
     ]
   end
 
   def setup_ui
+    @view_files = nil
+    @controller_files = nil
   end
 
   def init_current_example_map
