@@ -19,13 +19,12 @@
       <h1><%= page_title %></h1>
       <div><%= page_description %></div>
       
-      <%= link_to_function 'Controller code', 'toggleWithEffect($("controller-code"));' %>
+      <p><%= link_to_function 'Controller code', 'toggleWithEffect($("controller-code"));' %></p>
       <div id="controller-code" style="display: none;">
         <%= controller_code %>
       </div>
-      <br/>
       
-      <%= link_to_function 'View code', 'toggleWithEffect($("view-code"));' %>
+      <p><%= link_to_function 'View code', 'toggleWithEffect($("view-code"));' %></p>
       <div id="view-code" style="display: none;">
         <%= view_code %>
       </div>

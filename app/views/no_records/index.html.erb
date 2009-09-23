@@ -1,0 +1,43 @@
+<style>
+  .no-records{
+    border: 1px solid #c66;
+    background-color: #ffffee;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+  }
+</style>
+
+<%= grid(@tasks_grid, :show_filters => :always) do |g|
+
+  g.blank_slate  do
+    content_tag :div, "There are no records", :class => 'no-records'
+  end
+
+  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+  g.column :column_name => 'Title', :attribute_name => 'title'
+
+end -%>
+
+<%= grid(@tasks_grid2, :show_filters => :always) do |g|
+
+  g.blank_slate content_tag(:div, "There are no records", :class => 'no-records')
+
+  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+  g.column :column_name => 'Title', :attribute_name => 'title'
+
+end -%>
+
+<%= grid(@tasks_grid3, :show_filters => :always) do |g|
+
+  g.blank_slate :partial => "empty_grid"
+
+  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+  g.column :column_name => 'Title', :attribute_name => 'title'
+
+end -%>

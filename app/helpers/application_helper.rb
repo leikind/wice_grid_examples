@@ -36,7 +36,7 @@ module ApplicationHelper
   end
 
   def navigation_bar
-    content_tag :ul do
+    content_tag :ol do
       @example_map.collect do |example|
         content_tag :li do
           link_to_unless(example[0] == @current_example_key,example[1], send(example[0]))

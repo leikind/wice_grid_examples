@@ -1,0 +1,26 @@
+
+<%= grid(@tasks_grid, :show_filters => :always) do |g|
+
+  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+  g.column :column_name => 'Title', :attribute_name => 'title'
+
+  g.column  :column_name => 'Archived', :attribute_name => 'archived' do |task|
+    task.archived? ? 'Yes' : 'No'
+  end
+
+  g.column :column_name => 'Due Date', :attribute_name => 'due_date', :helper_style => :calendar do |task|
+    task.due_date.to_s(:short) if task.due_date
+  end
+
+  
+  g.column :column_name => 'Added', :attribute_name => 'created_at' do |task|
+    task.created_at.to_s(:short)
+  end
+
+  g.column :column_name => 'Updated', :attribute_name => 'updated_at', :helper_style => :standard do |task|
+    task.created_at.to_s(:short)
+  end
+
+
+end -%>

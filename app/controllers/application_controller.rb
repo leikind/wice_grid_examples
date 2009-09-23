@@ -36,6 +36,10 @@ class ApplicationController < ActionController::Base
          'grid 2: adding  styles dynamically to a TD returning a two row value from the column block',
       ]],
       [:adding_rows_path, 'Adding custom rows', nil],
+      [:no_records_path, 'A grid without records', 'Three ways to setup a no records view: (1) by a block (2) by a string parameter (3) by a partial'],
+      [:erb_mode_index_path, 'ERB mode', ['Setting ERB mode by :erb_mode => true']],
+      [:integration_with_forms_path, 'Integration with other forms on page', ['Using helper dump_filter_parameters_as_hidden_fields(grid) to dump all grid parameters as hidden form fields']],
+      [:dates_path, 'Date/Datetime helpers', ['Change between standard Rails date/datetime helpers and calendar helpers using :helper_style => :calendar or :helper_style => :standard ']],
     ]
   end
 
