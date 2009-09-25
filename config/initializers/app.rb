@@ -1,0 +1,1 @@
+README_URL = "http://leikind.org/apis/wice_grid/files/README_rdoc.html"

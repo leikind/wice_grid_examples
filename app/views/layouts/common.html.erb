@@ -17,7 +17,8 @@
     </div>
     <div id="main">
       <h1><%= page_title %></h1>
-      <div><%#= page_description %></div>
+      
+      <p><%= page_description %></p>
       
       <p><%= link_to_function 'Controller code', 'toggleWithEffect($("controller-code"));' %></p>
       <div id="controller-code" style="display: none;">

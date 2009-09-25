@@ -45,9 +45,7 @@ module ApplicationHelper
     if @current_example_map[2].blank?
       nil
     else
-      content_tag :ul, :class => 'page-description' do
-        @current_example_map[2].collect{|desc| content_tag(:li, h(desc)) }
-      end
+      %@<a href="#{README_URL}##{@current_example_map[2]}" target="_new">Documentation</a>@
     end
   end
 
