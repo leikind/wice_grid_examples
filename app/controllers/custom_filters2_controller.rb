@@ -1,5 +1,6 @@
 class CustomFilters2Controller < ApplicationController
-  
+
+  # <example>
   def index
     @tasks_grid = initialize_grid(Task,
       :include => [:priority, :status, :project, :assigned_users],
@@ -11,6 +12,7 @@ class CustomFilters2Controller < ApplicationController
       }
     )
   end
+  # </example>
 
   protected
 

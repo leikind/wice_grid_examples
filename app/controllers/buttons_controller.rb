@@ -1,5 +1,6 @@
 class ButtonsController < ApplicationController
   
+  # <example>
   def index
     @tasks_grid = initialize_grid(Task,
       :include => :priority,
@@ -8,6 +9,7 @@ class ButtonsController < ApplicationController
       }
     )
   end
+  # </example>
 
   protected
 

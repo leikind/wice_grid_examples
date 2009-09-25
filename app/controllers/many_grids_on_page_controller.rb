@@ -1,5 +1,6 @@
 class ManyGridsOnPageController < ApplicationController
-  
+
+  # <example>
   def index
     @projects_grid = initialize_grid(Project, 
       :include => [:customer, :supplier],
@@ -7,7 +8,8 @@ class ManyGridsOnPageController < ApplicationController
     )
     @tasks_grid = initialize_grid(Task, :name => 'g2')
   end
-
+  # </example>
+  
   protected
 
   def setup_ui

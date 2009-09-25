@@ -2,8 +2,6 @@ require 'test_helper'
 
 class CustomOrderingControllerTest < ActionController::TestCase
   
-  uses_rake_task_to_populate_the_database
-  
   def test_should_get_index
     get :index
     assert_response :success

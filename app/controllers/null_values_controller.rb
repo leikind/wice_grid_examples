@@ -1,5 +1,5 @@
 class NullValuesController < ApplicationController
-  
+  # <example>
   def index
     @tasks_grid = initialize_grid(Task,
       :include => :priority,
@@ -8,7 +8,7 @@ class NullValuesController < ApplicationController
       }
     )
   end
-
+  # </example>
   protected
 
   def setup_ui

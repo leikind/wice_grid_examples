@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class IntegrationWithFormsControllerTest < ActionController::TestCase
+class IntegrationWithApplicationControllerTest < ActionController::TestCase
   
   def test_should_get_index
     get :index

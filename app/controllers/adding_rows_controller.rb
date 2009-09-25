@@ -1,5 +1,6 @@
 class AddingRowsController < ApplicationController
   
+  # <example>
   def index
     @tasks_grid = initialize_grid(Task,
       :include => [:priority, :status, :project, :assigned_users],
@@ -11,7 +12,8 @@ class AddingRowsController < ApplicationController
       }
     )
   end
-
+  # </example>
+  
   protected
 
   def setup_ui

@@ -1,5 +1,6 @@
 class CsvExportController < ApplicationController
-  
+
+  # <example>
   def index
     @tasks_grid = initialize_grid(Task,
       :include => [:priority, :status, :project, :assigned_users],
@@ -25,6 +26,7 @@ class CsvExportController < ApplicationController
       # usual render or redirect code executed if the request is not a CSV export request
     end
   end
+  # </example>
 
   protected
 

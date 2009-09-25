@@ -1,5 +1,6 @@
 class DetachedFiltersController < ApplicationController
-  
+
+  # <example>
   def index
     @tasks_grid = initialize_grid(Task,
       :include => [:priority, :status, :project, :assigned_users],
@@ -18,6 +19,7 @@ class DetachedFiltersController < ApplicationController
       :csv_file_name => 'projects'
     )
   end
+  # </example>
 
   protected
 

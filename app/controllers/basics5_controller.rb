@@ -1,5 +1,6 @@
 class Basics5Controller < ApplicationController
   
+  # <example>
   def index
     @tasks_grid = initialize_grid(Task,
      :order => 'tasks.title',
@@ -8,6 +9,7 @@ class Basics5Controller < ApplicationController
      :per_page => 20
     )
   end
+  # </example> 
   
   protected
   

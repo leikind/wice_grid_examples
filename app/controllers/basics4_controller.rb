@@ -1,8 +1,10 @@
 class Basics4Controller < ApplicationController
   
+  # <example>
   def index
      @tasks_grid = initialize_grid(Task)
   end
+  # </example>
   
   protected
   

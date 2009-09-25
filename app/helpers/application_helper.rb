@@ -6,8 +6,11 @@ module ApplicationHelper
     code = ''
     index_started = false
     File.readlines(filename).each do |line|
-      index_started = true if line =~ /def\s+index/
-      break if  line =~ /protected/
+      if line =~ /# <example>/
+        index_started = true
+        next
+      end
+      break if line =~ /# <\/example>/
       code << line if index_started
     end
     
@@ -38,7 +41,7 @@ module ApplicationHelper
       nil
     else
       content_tag :ul, :class => 'page-description' do
-        @current_example_map[2].collect{|desc| content_tag(:li, desc) }
+        @current_example_map[2].collect{|desc| content_tag(:li, h(desc)) }
       end
     end
   end

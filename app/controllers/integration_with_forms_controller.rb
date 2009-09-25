@@ -1,5 +1,6 @@
 class IntegrationWithFormsController < ApplicationController
-  
+
+  # <example>
   def index
     @archived = params[:archived] == '1' ? true : false
     
@@ -14,6 +15,7 @@ class IntegrationWithFormsController < ApplicationController
       }
     )
   end
+  # </example>
 
   protected
 

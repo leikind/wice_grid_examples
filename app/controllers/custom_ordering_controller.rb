@@ -1,5 +1,6 @@
 class CustomOrderingController < ApplicationController
-  
+
+  # <example>
   def index
     @status_grid1 = initialize_grid(Status, 
       :order => 'statuses.name',
@@ -15,7 +16,8 @@ class CustomOrderingController < ApplicationController
       }
     )
   end
-
+  # </example>
+  
   protected
 
   def setup_ui
