@@ -2,7 +2,7 @@
 module ApplicationHelper
 
   def controller_code(filename = nil)
-    filename ||= 'app/controllers/' + @current_example_map[0].to_s.sub(/(_index)?_path/, '') + '_controller.rb'
+    filename ||= File.join(Rails.root, 'app/controllers/' + @current_example_map[0].to_s.sub(/(_index)?_path/, '') + '_controller.rb')
     code = ''
     index_started = false
     File.readlines(filename).each do |line|
@@ -18,7 +18,7 @@ module ApplicationHelper
     if filename.is_a? Array
       return filename.collect{|fn| view_code(fn)}.join('')
     elsif filename.nil?
-      filename =  'app/views/' + @current_example_map[0].to_s.sub(/(_index)?_path/, '') + '/index.html.erb'
+      filename =  File.join(Rails.root, 'app/views/' + @current_example_map[0].to_s.sub(/(_index)?_path/, '') + '/index.html.erb')
     end
     code = File.read(filename)
     filename_and_code(filename, code, :rhtml)

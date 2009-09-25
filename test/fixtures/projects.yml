@@ -1,7 +1,22 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  name: MyString
-
-two:
-  name: MyString
+--- 
+project_00025: 
+  name: Super Game
+  updated_at: 2009-09-25 15:00:43 Z
+  id: 25
+  customer_id: 33
+  supplier_id: 36
+  created_at: 2009-09-25 15:00:43 Z
+project_00026: 
+  name: Ultimate Website
+  updated_at: 2009-09-25 15:00:43 Z
+  id: 26
+  customer_id: 33
+  supplier_id: 35
+  created_at: 2009-09-25 15:00:43 Z
+project_00027: 
+  name: Divine Firmware
+  updated_at: 2009-09-25 15:00:43 Z
+  id: 27
+  customer_id: 34
+  supplier_id: 35
+  created_at: 2009-09-25 15:00:43 Z

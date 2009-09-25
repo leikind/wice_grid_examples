@@ -1,7 +1,61 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  name: MyString
-
-two:
-  name: MyString
+--- 
+user_00103: 
+  name: Obesandjo
+  updated_at: 2009-09-25 15:00:44 Z
+  id: 103
+  created_at: 2009-09-25 15:00:44 Z
+user_00104: 
+  name: Dirk Michaels
+  updated_at: 2009-09-25 15:00:44 Z
+  id: 104
+  created_at: 2009-09-25 15:00:44 Z
+user_00105: 
+  name: Ross Pienaar
+  updated_at: 2009-09-25 15:00:44 Z
+  id: 105
+  created_at: 2009-09-25 15:00:44 Z
+user_00106: 
+  name: Koobus Venter
+  updated_at: 2009-09-25 15:00:44 Z
+  id: 106
+  created_at: 2009-09-25 15:00:44 Z
+user_00097: 
+  name: Wikus van de Merwe
+  updated_at: 2009-09-25 15:00:44 Z
+  id: 97
+  created_at: 2009-09-25 15:00:44 Z
+user_00107: 
+  name: Dirk Michaels
+  updated_at: 2009-09-25 15:00:44 Z
+  id: 107
+  created_at: 2009-09-25 15:00:44 Z
+user_00108: 
+  name: " Sarah Livingstone"
+  updated_at: 2009-09-25 15:00:44 Z
+  id: 108
+  created_at: 2009-09-25 15:00:44 Z
+user_00098: 
+  name: Grey Bradnam
+  updated_at: 2009-09-25 15:00:44 Z
+  id: 98
+  created_at: 2009-09-25 15:00:44 Z
+user_00099: 
+  name: Christopher Johnson
+  updated_at: 2009-09-25 15:00:44 Z
+  id: 99
+  created_at: 2009-09-25 15:00:44 Z
+user_00100: 
+  name: Piet Smit
+  updated_at: 2009-09-25 15:00:44 Z
+  id: 100
+  created_at: 2009-09-25 15:00:44 Z
+user_00101: 
+  name: Fundiswa Mhlanga
+  updated_at: 2009-09-25 15:00:44 Z
+  id: 101
+  created_at: 2009-09-25 15:00:44 Z
+user_00102: 
+  name: Tania van de Merwe
+  updated_at: 2009-09-25 15:00:44 Z
+  id: 102
+  created_at: 2009-09-25 15:00:44 Z
