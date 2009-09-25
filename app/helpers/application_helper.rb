@@ -1,8 +1,12 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
+  @@code = Hash.new
+
   def controller_code(filename = nil)
+
     filename ||= File.join(Rails.root, 'app/controllers/' + @current_example_map[0].to_s.sub(/(_index)?_path/, '') + '_controller.rb')
+    return @@code[filename] if @@code.has_key?(filename)
     code = ''
     index_started = false
     File.readlines(filename).each do |line|
@@ -23,13 +27,14 @@ module ApplicationHelper
     elsif filename.nil?
       filename =  File.join(Rails.root, 'app/views/' + @current_example_map[0].to_s.sub(/(_index)?_path/, '') + '/index.html.erb')
     end
+    return @@code[filename] if @@code.has_key?(filename)
     code = File.read(filename)
     filename_and_code(filename, code, :rhtml)
   end
   
   
   def filename_and_code(filename, code, format)
-    content_tag(:div, filename, :class => 'filename') + CodeRay.scan(code, format).div(:line_numbers => :table)
+    @@code[filename] = content_tag(:div, filename, :class => 'filename') + CodeRay.scan(code, format).div(:line_numbers => :table)
   end
 
   def page_title
