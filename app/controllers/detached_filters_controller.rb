@@ -11,13 +11,6 @@ class DetachedFiltersController < ApplicationController
         'tasks.project_id' => 'projects.name'
       }
     )
-
-    @projects_grid = initialize_grid(Project,
-      :include => [:customer, :supplier],
-      :name => 'g2',
-      :enable_export_to_csv => true,
-      :csv_file_name => 'projects'
-    )
   end
   # </example>
 

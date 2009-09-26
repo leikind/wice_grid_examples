@@ -1,7 +1,9 @@
 <% form_tag(integration_with_application_index_path, :method => :get) do %>
   <%= dump_filter_parameters_as_hidden_fields(@tasks_grid) %>
   <%= hidden_field :process_selected_tasks, 1 %>
+  <p>
   <%= submit_tag 'Process the selected tasks' %>
+  </p>
 <% end -%>
 
 <%= grid(@tasks_grid, :show_filters => :always, :allow_showing_all_records => false) do |g|
