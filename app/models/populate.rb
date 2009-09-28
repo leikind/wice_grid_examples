@@ -1,14 +1,8 @@
 module Populate
   def self.me
-    Priority.delete_all
-    ProjectRole.delete_all
-    Status.delete_all    
-    Company.delete_all
-    Version.delete_all
-    User.delete_all
-    UserProjectParticipation.delete_all
-    Project.delete_all
-    Task.delete_all
+    
+    [Priority, ProjectRole, Status, Company, Version, User, UserProjectParticipation, Project, Task].map(&:delete_all)
+    
 
     %w(Urgent High Normal Low Anecdotic).each_with_index do |priority_name, i|
       Priority.create!(:position => i, :name => priority_name)
@@ -43,7 +37,7 @@ module Populate
     project_roles = ProjectRole.find(:all)
 
     ['Wikus van de Merwe', 'Grey Bradnam', 'Christopher Johnson', 'Piet Smit', 'Fundiswa Mhlanga', 'Tania van de Merwe', 
-     'Obesandjo', 'Dirk Michaels', 'Ross Pienaar', 'Koobus Venter', 'Dirk Michaels', ' Sarah Livingstone'].each do |user|
+     'Obesandjo', 'Dirk Michaels', 'Ross Pienaar', 'Koobus Venter', 'Dirk Michaels', 'Sarah Livingstone'].each do |user|
        user = User.create!(:name => user)
        
        (rand(3) + 1).times do

@@ -37,7 +37,8 @@ class ApplicationController < ActionController::Base
       [:all_records_path, 'Removing link "All Records"', 'showallrecords'],
       [:csv_export_index_path, 'CSV Export', 'csvexport'],
       [:detached_filters_path, 'Detached filters', 'detachedfilters'],
-      [:integration_with_application_index_path, 'Integration with the application', 'integrationwiththeapplication'],
+      [:integration_with_application_view_index_path, 'Accessing selected records outside the grid from the view', 'integrationwiththeapplication'],
+      [:integration_with_application_index_path, 'Accessing selected records outside the grid from the controller', 'accessingselectedrecordsfromthecontroller'],
     ]
   end
 

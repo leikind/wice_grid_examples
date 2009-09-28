@@ -24,6 +24,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :all_records
   map.resources :csv_export
   map.resources :detached_filters
+  map.resources :integration_with_application_view
   map.resources :integration_with_application
   
   map.resources :tasks # just in order to have the helpers defined
