@@ -7,3 +7,7 @@ rake wg:populate
 ./script/generate wice_grid_assets
 
 ./script/server
+
+OR:
+ go to http://grid.leikind.org to view the examples online
+ 
