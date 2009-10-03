@@ -4,14 +4,14 @@
 
   g.column :column_name => 'Title', :attribute_name => 'title'
 
-  g.column  :column_name => 'Description', :attribute_name => 'description'
+  g.column  :column_name => 'Description', :attribute_name => 'description', :no_filter => true
 
   # we show only tasks with archived == false, so this column is not needed
   # g.column  :column_name => 'Archived', :attribute_name => 'archived' do |task|
   #   task.archived? ? 'Yes' : 'No'
   # end
 
-  g.column :column_name => 'Added', :attribute_name => 'created_at' do |task|
+  g.column :column_name => 'Added', :attribute_name => 'created_at', :allow_ordering => false do |task|
     task.created_at.to_s(:short)
   end
 

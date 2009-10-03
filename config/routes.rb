@@ -5,6 +5,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :basics3
   map.resources :basics4
   map.resources :basics5
+  map.resources :basics6
   map.resources :joining_tables
   map.resources :two_associations
   map.resources :many_grids_on_page
@@ -13,6 +14,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :custom_filters1
   map.resources :custom_filters2
   map.resources :custom_filters3
+  map.resources :custom_filters4
   map.resources :null_values
   map.resources :buttons
   map.resources :styling

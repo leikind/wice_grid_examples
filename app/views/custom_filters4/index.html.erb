@@ -1,0 +1,20 @@
+<%= grid(@tasks_grid, :show_filters => :always) do |g|
+
+  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+  g.column :column_name => 'Title', :attribute_name => 'title'
+
+  g.column :column_name => 'Found in version', :model_class => 'Version', 
+           :attribute_name => 'name', :custom_filter => :auto, :allow_multiple_selection => false do |task|
+    task.relevant_version.name if task.relevant_version
+  end
+
+  g.column :column_name => 'Expected in version', :attribute_name => 'expected_version_id', 
+           :custom_filter => [:expected_version, :to_option], :allow_multiple_selection => false do |task|
+    task.expected_version.name if task.expected_version
+  end
+
+  g.column   do |task|
+    link_to('Edit', edit_task_path(task))
+  end
+end -%>
