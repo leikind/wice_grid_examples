@@ -66,7 +66,7 @@ p {
 }
 
 .filename{
-  ont-family: monospace, Terminal, monospace;
+  font-family: monospace, Terminal, monospace;
   font-size: 10px;
 }
 
