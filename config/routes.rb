@@ -28,6 +28,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :detached_filters
   map.resources :integration_with_application_view
   map.resources :integration_with_application
+  map.resources :localization
   
   map.resources :tasks # just in order to have the helpers defined
   map.resources :projects # just in order to have the helpers defined

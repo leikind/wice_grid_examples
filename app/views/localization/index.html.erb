@@ -1,10 +1,4 @@
-<% form_tag(integration_with_application_index_path, :method => :get) do %>
-  <%= dump_filter_parameters_as_hidden_fields(@tasks_grid) %>
-  <%= hidden_field :process_selected_tasks, 1 %>
-  <p>
-  <%= submit_tag 'Process the selected tasks' %>
-  </p>
-<% end -%>
+<%= language_switcher %>
 
 <%= grid(@tasks_grid, :show_filters => :always) do |g|
 
@@ -12,6 +6,7 @@
 
   g.column :column_name => 'Title', :attribute_name => 'title'
 
+  #                                                                                        returns an array of 2-element arrays
   g.column :column_name => 'Priority', :attribute_name => 'priority_id', :custom_filter => Priority.to_dropdown do |task|
     task.priority.name if task.priority
   end
@@ -36,8 +31,3 @@
     link_to('Edit', edit_task_path(task))
   end
 end -%>
-
-<% if params[:process_selected_tasks] 
-  selected = @tasks_grid.selected_records %>
-  <p><%= selected.size %> selected: <%= selected.map(&:id).to_sentence %></p>
-<% end -%>

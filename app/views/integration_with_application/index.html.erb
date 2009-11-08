@@ -6,7 +6,7 @@
   </p>
 <% end -%>
 
-<%= grid(@tasks_grid, :show_filters => :always, :allow_showing_all_records => false) do |g|
+<%= grid(@tasks_grid, :show_filters => :always) do |g|
 
   g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
 
