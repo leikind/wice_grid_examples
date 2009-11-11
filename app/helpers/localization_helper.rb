@@ -1,7 +1,7 @@
 module LocalizationHelper
 
   def language_switcher
-    langs = ['en', 'nl', 'fr']
+    langs = ['en', 'nl', 'fr', 'is']
     current = session[:lang].to_s
     langs.collect do |lang|
       link_to_unless(current == lang, lang, url_for(:lang => lang))
