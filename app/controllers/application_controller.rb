@@ -41,7 +41,9 @@ class ApplicationController < ActionController::Base
       [:detached_filters_path, 'Detached filters', 'detachedfilters'],
       [:integration_with_application_view_index_path, 'Accessing selected records outside the grid from the view', 'integrationwiththeapplication'],
       [:integration_with_application_index_path, 'Accessing selected records outside the grid from the controller', 'accessingselectedrecordsfromthecontroller'],
-      [:localization_index_path, 'Localization', 'localization']
+      [:localization_index_path, 'Localization', 'localization'],
+      [:custom_filter_params_path, 'Generating custom filter parameters', 'localization']
+      
     ]
   end
 
