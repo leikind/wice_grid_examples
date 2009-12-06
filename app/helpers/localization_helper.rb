@@ -7,4 +7,9 @@ module LocalizationHelper
       link_to_unless(current == lang, lang, url_for(:lang => lang))
     end.join(' ')
   end
+  
+  if self.respond_to?(:safe_helper)
+    safe_helper :language_switcher
+  end
+  
 end

@@ -49,6 +49,10 @@ module ApplicationHelper
     end
   end
 
+  if self.respond_to?(:safe_helper)
+    safe_helper :page_description, :view_code, :controller_code
+  end
+
   def navigation_bar
     content_tag :ol do
       @example_map.collect do |example|
