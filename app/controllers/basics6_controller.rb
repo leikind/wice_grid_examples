@@ -5,7 +5,7 @@ class Basics6Controller < ApplicationController
     @tasks_grid = initialize_grid(Task,
      :order => 'tasks.title',
      :order_direction => 'desc',
-     :conditions => "archived = false",
+     :conditions => ['archived = ?', false],
      :per_page => 20
     )
   end

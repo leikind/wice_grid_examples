@@ -4,7 +4,7 @@ class JoiningTablesController < ApplicationController
   def index
     @tasks_grid = initialize_grid(Task,
       :include => [:priority, :status, :project, :assigned_users],
-      :conditions => 'tasks.archived = false',
+      :conditions => {:archived => false},
       :order => 'id'
     )
   end
