@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
     @example_map = [
       [:basics1_index_path, 'Basics: most simple grid', 'basics'],
       [:basics2_index_path, 'Basics: naming columns', 'basics'],
+      [:upper_pagination_panel_index_path, 'Basics: showing two pagination panels', nil],
       [:basics3_index_path, 'Basics: declaring attributes', 'basics'],
       [:basics4_index_path, 'Basics: declaring attributes (2)', 'basics'],
       [:basics5_index_path, 'Basics: initial conditions and ordering', 'initialordering'],

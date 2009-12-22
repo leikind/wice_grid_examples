@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :basics1
   map.resources :basics2
+  map.resources :upper_pagination_panel
   map.resources :basics3
   map.resources :basics4
   map.resources :basics5
