@@ -1,0 +1,36 @@
+<% form_tag(process_issues_action_column_path) do -%>
+  
+  <% if flash[:notice]%>
+  <p><%= flash[:notice] %></p>
+  <% end -%>
+
+  <p>
+  <%= submit_tag 'Process tasks' %>
+  </p>
+
+  <%= grid(@tasks_grid, :show_filters => :always) do |g|
+
+    g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+    g.column :column_name => 'Title', :attribute_name => 'title'
+
+    g.column :column_name => 'Priority', :attribute_name => 'priority_id', :custom_filter => Priority.to_dropdown do |task|
+      task.priority.name if task.priority
+    end
+
+    g.action_column
+    # The default param_name is 'selected', the complete HTTP parameter will be "#{grid_name}[#{param_name}][]"
+
+    # Or:
+    # g.action_column :param_name => :foo, :td_html_attrs => {:class => 'my_class'},
+    #                 :select_all_buttons => false, :object_property => :id
+
+    g.column   do |task|
+      link_to('Edit', edit_task_path(task))
+    end
+  
+  end -%>
+
+  <%= submit_tag 'Process tasks' %>
+
+<% end -%>

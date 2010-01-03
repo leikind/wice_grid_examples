@@ -30,6 +30,7 @@ class ApplicationController < ActionController::Base
       [:custom_filters3_index_path, 'Custom filters (method chains)', 'customdropdownfilters'],
       [:custom_filters4_index_path, 'Custom filters: disallowing multiple selection', 'multipleselection'],
       [:null_values_path, 'Custom filters (null values)', 'customdropdownfilters'],
+      [:action_column_index_path, 'Action column', 'actioncolumn'],
       [:buttons_path, 'Using custom submit/reset buttons', 'submit/resetbuttons'],
       [:styling_index_path, 'Styling the grid', 'stylingthegrid'],
       [:adding_rows_path, 'Adding custom rows', 'addingrowstothegrid'],

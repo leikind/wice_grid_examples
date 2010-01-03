@@ -5,7 +5,8 @@ module ApplicationHelper
 
   def controller_code(filename = nil)
 
-    filename ||= File.join(Rails.root, 'app/controllers/' + @current_example_map[0].to_s.sub(/(_index)?_path/, '') + '_controller.rb')
+    filename_for_view ||=  File.join('app/controllers/' + @current_example_map[0].to_s.sub(/(_index)?_path/, '') + '_controller.rb')
+    filename ||= File.join(Rails.root, filename_for_view)
     return @@code[filename] if @@code.has_key?(filename)
     code = ''
     index_started = false
@@ -17,24 +18,26 @@ module ApplicationHelper
       break if line =~ /# <\/example>/
       code << line if index_started
     end
-    
-    filename_and_code(filename, code, :ruby)
+
+    filename_and_code(filename, filename_for_view, code, :ruby)
   end
   
   def view_code(filename = nil)
     if filename.is_a? Array
       return filename.collect{|fn| view_code(fn)}.join('')
     elsif filename.nil?
-      filename =  File.join(Rails.root, 'app/views/' + @current_example_map[0].to_s.sub(/(_index)?_path/, '') + '/index.html.erb')
+      filename_for_view =  File.join('app/views/' + @current_example_map[0].to_s.sub(/(_index)?_path/, '') + '/index.html.erb')
+      filename =  File.join(Rails.root, filename_for_view)
     end
     return @@code[filename] if @@code.has_key?(filename)
     code = File.read(filename)
-    filename_and_code(filename, code, :rhtml)
+    filename_and_code(filename, filename_for_view, code, :rhtml)
   end
   
   
-  def filename_and_code(filename, code, format)
-    @@code[filename] = content_tag(:div, filename, :class => 'filename') + CodeRay.scan(code, format).div(:line_numbers => :table)
+  def filename_and_code(filename, filename_for_view, code, format)
+    @@code[filename] = content_tag(:div, filename_for_view, :class => 'filename') + 
+      CodeRay.scan(code, format).div(:line_numbers => :table)
   end
 
   def page_title

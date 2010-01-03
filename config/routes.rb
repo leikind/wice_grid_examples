@@ -30,7 +30,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :integration_with_application_view
   map.resources :integration_with_application
   map.resources :localization
-  
+  map.resources :action_column, :collection => {:process_issues => :post}
   map.resources :custom_filter_params
   
   map.resources :tasks 
