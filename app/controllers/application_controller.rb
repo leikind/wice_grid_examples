@@ -44,7 +44,8 @@ class ApplicationController < ActionController::Base
       [:integration_with_application_view_index_path, 'Accessing selected records outside the grid from the view', 'integrationwiththeapplication'],
       [:integration_with_application_index_path, 'Accessing selected records outside the grid from the controller', 'accessingselectedrecordsfromthecontroller'],
       [:localization_index_path, 'Localization', 'localization'],
-      [:custom_filter_params_path, 'Generating custom filter parameters', 'localization']
+      [:custom_filter_params_path, 'Generating custom filter parameters', 'localization'],
+      [:saved_queries_path, 'Saved queries: simple example', ['http://leikind.org/apis/wice_grid/files/SAVED_QUERIES_HOWTO_rdoc.html']]
       
     ]
   end
@@ -57,7 +58,7 @@ class ApplicationController < ActionController::Base
   def init_current_example_map
     # TODO Switch to Ordered Hash
     @current_example_map = @example_map.detect{|m| m[0] == @current_example_key}
-    raise "define correct @current_example_key in setup_ui of your example" unless @current_example_map
+    # raise "define correct @current_example_key in setup_ui of your example" unless @current_example_map
   end
 
 end

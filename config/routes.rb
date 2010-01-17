@@ -32,11 +32,14 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :localization
   map.resources :action_column, :collection => {:process_issues => :post}
   map.resources :custom_filter_params
+  map.resources :saved_queries
   
   map.resources :tasks 
   map.resources :projects # just in order to have the helpers defined
   
   map.root :controller => 'basics1'
+  
+  Wice::define_routes(map, 'queries')
     
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'

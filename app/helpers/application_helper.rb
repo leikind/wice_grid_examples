@@ -47,6 +47,9 @@ module ApplicationHelper
   def page_description
     if @current_example_map[2].blank?
       nil
+    elsif @current_example_map[2].is_a? Array
+      anchor = @current_example_map[2][1] ? '#' + @current_example_map[2][1] : ''
+      %@<a href="#{@current_example_map[2][0]}#{anchor}" target="_new">Documentation</a>@
     else
       %@<a href="#{README_URL}##{@current_example_map[2]}" target="_new">Documentation</a>@
     end
