@@ -65,7 +65,8 @@ module ApplicationHelper
         content_tag :li do
           link_to_unless(example[0] == @current_example_key,example[1], send(example[0]))
         end
-      end
+      end.join('')
     end
+    
   end
 end
