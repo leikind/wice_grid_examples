@@ -45,7 +45,8 @@ class ApplicationController < ActionController::Base
       [:integration_with_application_index_path, 'Accessing selected records outside the grid from the controller', 'accessingselectedrecordsfromthecontroller'],
       [:localization_index_path, 'Localization', 'localization'],
       [:custom_filter_params_path, 'Generating custom filter parameters', 'localization'],
-      [:saved_queries_path, 'Saved queries: simple example', ['http://leikind.org/apis/wice_grid/files/SAVED_QUERIES_HOWTO_rdoc.html']]
+      [:saved_queries_path, 'Saved queries: simple example', ['http://leikind.org/apis/wice_grid/files/SAVED_QUERIES_HOWTO_rdoc.html']],
+      [:resultset_processings_path, 'Resultset Processing', []]
       
     ]
   end
