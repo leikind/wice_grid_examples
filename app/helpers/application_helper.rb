@@ -34,10 +34,9 @@ module ApplicationHelper
     filename_and_code(filename, filename_for_view, code, :rhtml)
   end
   
-  
   def filename_and_code(filename, filename_for_view, code, format)
-    @@code[filename] = content_tag(:div, filename_for_view, :class => 'filename') + 
-      CodeRay.scan(code, format).div(:line_numbers => :table)
+    @@code[filename] = content_tag(:div, filename_for_view, :class => 'filename') +
+      CodeRay.scan(code, format).div(:line_numbers => :table).html_safe_if_needed
   end
 
   def page_title
@@ -49,24 +48,21 @@ module ApplicationHelper
       nil
     elsif @current_example_map[2].is_a? Array
       anchor = @current_example_map[2][1] ? '#' + @current_example_map[2][1] : ''
-      %@<a href="#{@current_example_map[2][0]}#{anchor}" target="_new">Documentation</a>@
+      %@<a href="#{@current_example_map[2][0]}#{anchor}" target="_new">Documentation</a>@.html_safe_if_needed
     else
-      %@<a href="#{README_URL}##{@current_example_map[2]}" target="_new">Documentation</a>@
+      %@<a href="#{README_URL}##{@current_example_map[2]}" target="_new">Documentation</a>@.html_safe_if_needed
     end
   end
 
-  if self.respond_to?(:safe_helper)
-    safe_helper :page_description, :view_code, :controller_code
-  end
-
-  def navigation_bar
+  def navigation_bar # html_safe because content_tag returns ActiveSupport::SafeBuffer
     content_tag :ol do
       @example_map.collect do |example|
         content_tag :li do
           link_to_unless(example[0] == @current_example_key,example[1], send(example[0]))
         end
-      end.join('')
+      end.join('').html_safe_if_needed
     end
-    
   end
+  
+  
 end
