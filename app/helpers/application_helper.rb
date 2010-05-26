@@ -36,7 +36,7 @@ module ApplicationHelper
   
   def filename_and_code(filename, filename_for_view, code, format)
     @@code[filename] = content_tag(:div, filename_for_view, :class => 'filename') +
-      CodeRay.scan(code, format).div(:line_numbers => :table).html_safe_if_needed
+      CodeRay.scan(code, format).div(:line_numbers => :table).html_safe_if_necessary
   end
 
   def page_title
@@ -48,9 +48,9 @@ module ApplicationHelper
       nil
     elsif @current_example_map[2].is_a? Array
       anchor = @current_example_map[2][1] ? '#' + @current_example_map[2][1] : ''
-      %@<a href="#{@current_example_map[2][0]}#{anchor}" target="_new">Documentation</a>@.html_safe_if_needed
+      %@<a href="#{@current_example_map[2][0]}#{anchor}" target="_new">Documentation</a>@.html_safe_if_necessary
     else
-      %@<a href="#{README_URL}##{@current_example_map[2]}" target="_new">Documentation</a>@.html_safe_if_needed
+      %@<a href="#{README_URL}##{@current_example_map[2]}" target="_new">Documentation</a>@.html_safe_if_necessary
     end
   end
 
@@ -60,7 +60,7 @@ module ApplicationHelper
         content_tag :li do
           link_to_unless(example[0] == @current_example_key,example[1], send(example[0]))
         end
-      end.join('').html_safe_if_needed
+      end.join('').html_safe_if_necessary
     end
   end
   

@@ -1,5 +1,5 @@
 module StringExt #:nodoc:
-  def html_safe_if_needed #:nodoc:
+  def html_safe_if_necessary #:nodoc:
     if respond_to?(:html_safe)
       html_safe
     else
