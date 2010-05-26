@@ -33,6 +33,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :action_column, :collection => {:process_issues => :post}
   map.resources :custom_filter_params
   map.resources :saved_queries
+  map.resources :resultset_processings
   
   map.resources :tasks 
   map.resources :projects # just in order to have the helpers defined
