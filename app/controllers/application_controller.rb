@@ -41,12 +41,15 @@ class ApplicationController < ActionController::Base
       [:all_records_path, 'Removing link "All Records"', 'showallrecords'],
       [:csv_export_index_path, 'CSV Export', 'csvexport'],
       [:detached_filters_path, 'Detached filters', 'detachedfilters'],
-      [:integration_with_application_view_index_path, 'Accessing selected records outside the grid from the view', 'integrationwiththeapplication'],
-      [:integration_with_application_index_path, 'Accessing selected records outside the grid from the controller', 'accessingselectedrecordsfromthecontroller'],
+
+      [:integration_with_application_view_index_path, 'View helpers to access records on the current page and all pages', 'integrationwiththeapplication'],
+      [:resultset_processings_path, 'Callback to process records of the current page', []],
+      [:integration_with_application_index_path, 'Callback to process records throughout all pages on demand', 'accessingselectedrecordsfromthecontroller'],
+      
       [:localization_index_path, 'Localization', 'localization'],
       [:custom_filter_params_path, 'Generating custom filter parameters', 'localization'],
-      [:saved_queries_path, 'Saved queries: simple example', ['http://leikind.org/apis/wice_grid/files/SAVED_QUERIES_HOWTO_rdoc.html']],
-      [:resultset_processings_path, 'Resultset Processing', []]
+      [:saved_queries_path, 'Saved queries: simple example', ['http://leikind.org/apis/wice_grid/files/SAVED_QUERIES_HOWTO_rdoc.html']]
+
       
     ]
   end

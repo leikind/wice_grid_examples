@@ -5,6 +5,7 @@ class IntegrationWithApplicationViewController < ApplicationController
     @tasks_grid = initialize_grid(Task,
       :include => [:priority, :status, :project, :assigned_users],
       :order => 'statuses.name',
+      :per_page => 10,
       :custom_order => {
         'tasks.priority_id' => 'priorities.name',
         'tasks.status_id' => 'statuses.position',
