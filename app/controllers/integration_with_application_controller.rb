@@ -11,7 +11,7 @@ class IntegrationWithApplicationController < ApplicationController
         'tasks.status_id' => 'statuses.position',
         'tasks.project_id' => 'projects.name'
       },
-      :after => :process_selection
+      :with_resultset => :process_selection
     )
   end
 
