@@ -23,6 +23,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :no_records
   map.resources :erb_mode
   map.resources :integration_with_forms
+  map.resources :auto_reloads
   map.resources :dates
   map.resources :all_records
   map.resources :csv_export
