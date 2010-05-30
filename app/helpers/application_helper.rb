@@ -24,7 +24,7 @@ module ApplicationHelper
   
   def view_code(filename = nil)
     if filename.is_a? Array
-      return filename.collect{|fn| view_code(fn)}.join('')
+      return filename.collect{|fn| view_code(fn)}.join('').html_safe_if_necessary
     elsif filename.nil?
       filename_for_view =  File.join('app/views/' + @current_example_map[0].to_s.sub(/(_index)?_path/, '') + '/index.html.erb')
       filename =  File.join(Rails.root, filename_for_view)
