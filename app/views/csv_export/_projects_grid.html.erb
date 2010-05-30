@@ -1,4 +1,8 @@
-<%= grid(@projects_grid, :show_filters => :always) do |g|
+<div style="margin: 20px">
+<%= button_to_function "Export To CSV (custom CSV export button)", export_to_csv_javascript(@tasks_grid) %>
+</div>
+
+<%= grid(@projects_grid, :show_filters => :always, :hide_csv_button => true) do |g|
 
   g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
 
