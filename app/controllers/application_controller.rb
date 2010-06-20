@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
       [:custom_filters3_index_path, 'Custom filters (method chains)', 'customdropdownfilters'],
       [:custom_filters4_index_path, 'Custom filters: disallowing multiple selection', 'multipleselection'],
       [:null_values_path, 'Custom filters (null values)', 'customdropdownfilters'],
-      [:auto_reloads_path, 'Auto reloading filters', ''],
+      [:auto_reloads_path, 'Auto reloading filters', 'auto-reloadingfilters'],
       [:action_column_index_path, 'Action column', 'actioncolumn'],
       [:buttons_path, 'Using custom submit/reset buttons', 'submit/resetbuttons'],
       [:styling_index_path, 'Styling the grid', 'stylingthegrid'],
@@ -43,12 +43,12 @@ class ApplicationController < ActionController::Base
       [:csv_export_index_path, 'CSV Export', 'csvexport'],
       [:detached_filters_path, 'Detached filters', 'detachedfilters'],
 
-      [:integration_with_application_view_index_path, 'View helpers to access records on the current page and all pages', 'integrationwiththeapplication'],
-      [:resultset_processings_path, 'Callback to process records of the current page', []],
-      [:integration_with_application_index_path, 'Callback to process records throughout all pages on demand', 'accessingselectedrecordsfromthecontroller'],
+      [:integration_with_application_view_index_path, 'View helpers to access records on the current page and all pages', 'accessingrecordsviathewicegridobject'],
+      [:resultset_processings_path, 'Callback to process records of the current page', 'accessingrecordsviacallbacks'],
+      [:integration_with_application_index_path, 'Callback to process records throughout all pages on demand', 'accessingrecordsviacallbacks'],
 
       [:localization_index_path, 'Localization', 'localization'],
-      [:custom_filter_params_path, 'Generating custom filter parameters', 'localization'],
+      [:custom_filter_params_path, 'Generating custom filter parameters', ['http://leikind.org/apis/wice_grid/classes/Wice/GridViewHelper.html#M000002']],
       [:saved_queries_path, 'Saved queries: simple example', ['http://leikind.org/apis/wice_grid/files/SAVED_QUERIES_HOWTO_rdoc.html']]
 
 
