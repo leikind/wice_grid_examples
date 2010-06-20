@@ -1,0 +1,16 @@
+
+<%= grid(@tasks_grid) do |g|
+
+  g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
+
+  g.column :column_name => 'Title', :attribute_name => 'title'
+
+  g.column :column_name => 'Project ID', :attribute_name => 'project_id'
+
+  g.column :column_name => 'Project Data' do |task|
+	@project_data[task.project_id]
+  end
+
+end -%>
+@project_data = 
+<%= debug @project_data %>

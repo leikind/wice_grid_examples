@@ -1,4 +1,4 @@
-<%= grid(@tasks_grid, :show_filters => :always) do |g|
+<%= grid(@tasks_grid, :show_filters => :always, :upper_pagination_panel => true) do |g|
 
   g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
 

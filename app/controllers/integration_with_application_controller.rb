@@ -3,6 +3,7 @@ class IntegrationWithApplicationController < ApplicationController
   # <example>
   def index
     @tasks_grid = initialize_grid(Task,
+      :per_page => 10,
       :include => [:priority, :status, :project, :assigned_users],
       :order => 'statuses.name',
       :custom_order => {
@@ -10,7 +11,7 @@ class IntegrationWithApplicationController < ApplicationController
         'tasks.status_id' => 'statuses.position',
         'tasks.project_id' => 'projects.name'
       },
-      :after => :process_selection
+      :with_resultset => :process_selection
     )
   end
 

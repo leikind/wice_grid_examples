@@ -5,11 +5,8 @@ module LocalizationHelper
     current = session[:lang].to_s
     langs.collect do |lang|
       link_to_unless(current == lang, lang, url_for(:lang => lang))
-    end.join(' ')
+    end.join(' ').html_safe_if_necessary
   end
   
-  if self.respond_to?(:safe_helper)
-    safe_helper :language_switcher
-  end
   
 end

@@ -1,0 +1,26 @@
+
+<%= grid(@tasks_grid, :show_filters => :always, :hide_submit_button => true) do |g|
+
+  g.column :column_name => 'ID', :attribute_name => 'id', :auto_reload => true
+
+  g.column :column_name => 'Title', :attribute_name => 'title', :auto_reload => true
+
+  g.column :column_name => 'Archived', :attribute_name => 'archived', :auto_reload => true
+
+
+  g.column :column_name => 'Status', :attribute_name => 'status_id', :custom_filter => Status.to_dropdown, :auto_reload => true  do |task|
+    task.status.name if task.status
+  end
+
+  g.column :column_name => 'Project Name', :attribute_name => 'project_id', :custom_filter => Project.to_dropdown, :auto_reload => true do |task|
+    task.project.name if task.project
+  end
+
+  g.column :column_name => 'Added', :attribute_name => 'created_at', :auto_reload => true, :helper_style => :calendar do |task|
+    task.created_at.to_s(:short)
+  end
+
+  g.column   do |task|
+    link_to('Edit', edit_task_path(task))
+  end
+end -%>

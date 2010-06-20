@@ -23,6 +23,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :no_records
   map.resources :erb_mode
   map.resources :integration_with_forms
+  map.resources :auto_reloads
   map.resources :dates
   map.resources :all_records
   map.resources :csv_export
@@ -33,6 +34,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :action_column, :collection => {:process_issues => :post}
   map.resources :custom_filter_params
   map.resources :saved_queries
+  map.resources :resultset_processings
   
   map.resources :tasks 
   map.resources :projects # just in order to have the helpers defined
