@@ -1,9 +1,12 @@
 # Create database wice_grid_examples_development && check your database.yml
 
+gem install erubis
+
+./script/plugin install git://github.com/leikind/wice_grid.git
+
 rake db:migrate
 rake wg:populate
 
-./script/plugin install git://github.com/leikind/wice_grid.git
 ./script/generate wice_grid_assets
 
 ./script/server
