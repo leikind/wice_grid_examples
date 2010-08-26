@@ -1,1 +1,5 @@
 .rvmrc
+log/development.log
+log/production.log
+.bundle/config
+.DS_Store

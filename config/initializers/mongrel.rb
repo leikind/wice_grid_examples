@@ -1,11 +1,11 @@
 if Rails.version == '2.3.8' && Gem.available?('mongrel', Gem::Requirement.new('~>1.1.5')) && self.class.const_defined?(:Mongrel)
-  
+
   # Pulled right from latest rack. Old looked like this in 1.1.0 version.
-  # 
+  #
   # def [](k)
   #   super(@names[k] ||= @names[k.downcase])
   # end
-  # 
+  #
   module Rack
     module Utils
       class HeaderHash < Hash
@@ -16,9 +16,9 @@ if Rails.version == '2.3.8' && Gem.available?('mongrel', Gem::Requirement.new('~
       end
     end
   end
-  
+
   # Code pulled from the ticket above.
-  # 
+  #
   class Mongrel::CGIWrapper
     def header_with_rails_fix(options = 'text/html')
       @head['cookie'] = options.delete('cookie').flatten.map { |v| v.sub(/^\n/,'') } if options.class != String and options['cookie']
@@ -26,19 +26,19 @@ if Rails.version == '2.3.8' && Gem.available?('mongrel', Gem::Requirement.new('~
     end
     alias_method_chain :header, :rails_fix
   end
-  
+
   # Pulled right from 2.3.8 ActionPack. Simple diff was
-  # 
+  #
   # if headers.include?('Set-Cookie')
   #   headers['cookie'] = headers.delete('Set-Cookie').split("\n")
   # end
-  # 
-  # to 
-  # 
+  #
+  # to
+  #
   # if headers['Set-Cookie']
   #   headers['cookie'] = headers.delete('Set-Cookie').split("\n")
   # end
-  #       
+  #
   module ActionController
     class CGIHandler
       def self.dispatch_cgi(app, cgi, out = $stdout)
@@ -78,5 +78,5 @@ if Rails.version == '2.3.8' && Gem.available?('mongrel', Gem::Requirement.new('~
       end
     end
   end
-  
+
 end

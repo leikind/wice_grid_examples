@@ -1,16 +1,28 @@
-# Create database wice_grid_examples_development && check your database.yml
+# Get it:
+git clone git://github.com/leikind/wice_grid_examples.git
 
-gem install erubis
+cd wice_grid_examples
 
+# Install dependencies:
+bundle
+
+# Create database wice_grid_examples_development && check your database.yml !
+
+# get the plugin:
 ./script/plugin install git://github.com/leikind/wice_grid.git
 
+# migrate the DB:
 rake db:migrate
+
+# populate the DB:
 rake wg:populate
 
-./script/generate wice_grid_assets
+# install assets for the version with Prototype:
+./script/generate  wice_grid_assets_prototype
+# or for jQuery:
+./script/generate  wice_grid_assets_jquery
 
+# run it:
 ./script/server
 
-OR:
- go to http://grid.leikind.org to view the examples online
- 
+# OR: go to http://grid.leikind.org to view the examples online

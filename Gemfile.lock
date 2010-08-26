@@ -1,0 +1,43 @@
+GEM
+  remote: http://gemcutter.org/
+  remote: http://gems.github.com/
+  specs:
+    abstract (1.0.0)
+    actionmailer (2.3.8)
+      actionpack (= 2.3.8)
+    actionpack (2.3.8)
+      activesupport (= 2.3.8)
+      rack (~> 1.1.0)
+    activerecord (2.3.8)
+      activesupport (= 2.3.8)
+    activeresource (2.3.8)
+      activesupport (= 2.3.8)
+    activesupport (2.3.8)
+    coderay (0.9.3)
+    erubis (2.6.6)
+      abstract (>= 1.0.0)
+    faker (0.3.1)
+    mislav-will_paginate (2.3.11)
+    mysql (2.8.1)
+    rack (1.1.0)
+    rails (2.3.8)
+      actionmailer (= 2.3.8)
+      actionpack (= 2.3.8)
+      activerecord (= 2.3.8)
+      activeresource (= 2.3.8)
+      activesupport (= 2.3.8)
+      rake (>= 0.8.3)
+    rake (0.8.7)
+    thoughtbot-shoulda (2.10.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  coderay
+  erubis
+  faker
+  mislav-will_paginate
+  mysql
+  rails (= 2.3.8)
+  thoughtbot-shoulda (= 2.10.1)
