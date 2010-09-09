@@ -10,7 +10,7 @@
   end
 
   g.column  :column_name => 'Supplier company', 
-            :model_class => 'Company', :attribute_name => 'name', :table_alias => ' suppliers_projects' do |task|
+            :model_class => 'Company', :attribute_name => 'name', :table_alias => 'suppliers_projects' do |task|
     task.supplier.name if task.supplier
   end
 
