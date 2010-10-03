@@ -1,19 +1,21 @@
 class LocalizationController < ApplicationController
 
+  # The same code exists in ApplicationController and
+  # is repeated here for the sake of clarity
   # <example>
 
   before_filter :init_locale
-  
+
   def init_locale
     if params[:lang]
       session[:lang] = params[:lang]
     end
-    
+
     session[:lang] = :nl unless session[:lang]
-    
+
     I18n.locale = session[:lang]
   end
-  
+
   def index
     @tasks_grid = initialize_grid(Task,
       :include => [:priority, :status, :project, :assigned_users],
