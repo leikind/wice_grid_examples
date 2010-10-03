@@ -33,6 +33,7 @@ class ApplicationController < ActionController::Base
       [:basics4_index_path, 'Basics: declaring attributes (2)', 'basics'],
       [:basics5_index_path, 'Basics: initial conditions and ordering', 'initialordering'],
       [:basics6_index_path, 'Basics: :no_filter and :allow_ordering', 'initialordering'],
+      [:negation_index_path, 'text filters with negation', nil],
       [:joining_tables_path, 'Joined tables', 'querieswithjointables'],
       [:two_associations_path, '2 associations to the same table', 'joinedassociationsreferringtothesametable'],
       [:many_grids_on_page_index_path, 'More than 1 grid on a page', 'morethanonegridonapage'],
