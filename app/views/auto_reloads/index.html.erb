@@ -16,6 +16,11 @@
     task.project.name if task.project
   end
 
+  g.column :column_name => 'Due', :attribute_name => 'due_date', :auto_reload => true, :helper_style => :calendar do |task|
+    task.created_at.to_s(:short)
+  end
+
+
   g.column :column_name => 'Added', :attribute_name => 'created_at', :auto_reload => true, :helper_style => :calendar do |task|
     task.created_at.to_s(:short)
   end
