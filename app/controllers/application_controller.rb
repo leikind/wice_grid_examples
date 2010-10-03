@@ -9,6 +9,19 @@ class ApplicationController < ActionController::Base
   before_filter :setup_ui
   before_filter :init_current_example_map
 
+  before_filter :init_locale
+
+  def init_locale
+    if params[:lang]
+      session[:lang] = params[:lang]
+    end
+
+    session[:lang] = :nl unless session[:lang]
+
+    I18n.locale = session[:lang]
+  end
+
+
   protected
 
   def init_example_map
