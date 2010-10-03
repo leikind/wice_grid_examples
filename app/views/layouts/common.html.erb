@@ -6,10 +6,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title><%= page_title %></title>
      <%= javascript_include_tag :defaults %>
-     <%= stylesheet_link_tag 'application' %>
+
+     <%= stylesheet_link_tag 'application', 'jquery-ui-1.8.5.custom.css' %>
      
      <%= include_wice_grid_assets %>
-
+     <%= javascript_include_tag 'jquery.ui.datepicker-en.js' %>
+     <%= javascript_include_tag 'jquery.ui.datepicker-fr.js' %>
+     <%= javascript_include_tag 'jquery.ui.datepicker-nl.js' %>
   </head>
   <body>
     <div id="sidebar">
