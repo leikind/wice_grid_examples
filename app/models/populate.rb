@@ -79,6 +79,7 @@ module Populate
         :relevant_version => (rand(2) == 0 ? nil : project.versions.rand),
         :expected_version => (rand(2) == 0 ? nil : project.versions.rand),
         :estimated_time => rand(20) + 1,
+        :due_date => Date.current.advance(:days => (rand(300) + 100)),
         :created_at => (rand(100) + 100).days.ago,
         :updated_at => rand(100).days.ago,
         :archived => rand(10) == 0
