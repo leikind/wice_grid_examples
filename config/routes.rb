@@ -35,6 +35,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :custom_filter_params
   map.resources :saved_queries
   map.resources :resultset_processings
+  map.resources :negation
   
   map.resources :tasks 
   map.resources :projects # just in order to have the helpers defined
