@@ -8,7 +8,9 @@ gem "will_paginate", '3.0.pre'
 
 
 
-gem "wice_grid", '3.0.0.pre1', :path => 'vendor/wice_grid'
+# gem "wice_grid", '3.0.0.pre1', :path => 'vendor/wice_grid'
+gem "wice_grid", '3.0.0.pre1'
+
 
 gem "faker"
 gem "coderay"
