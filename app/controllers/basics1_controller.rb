@@ -11,6 +11,5 @@ class Basics1Controller < ApplicationController
   def setup_ui
     @current_example_key = :basics1_index_path
   end
-  
-  
+
 end

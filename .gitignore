@@ -1,5 +1,5 @@
-.rvmrc
-log/development.log
-log/production.log
-.bundle/config
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
 .DS_Store

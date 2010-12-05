@@ -79,5 +79,4 @@ class ApplicationController < ActionController::Base
     @current_example_map = @example_map.detect{|m| m[0] == @current_example_key}
     # raise "define correct @current_example_key in setup_ui of your example" unless @current_example_map
   end
-
 end
