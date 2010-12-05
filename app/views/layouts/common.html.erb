@@ -20,12 +20,12 @@
       
       <p><%= page_description %></p>
       
-      <p><%= link_to_function 'Controller code', 'toggleWithEffect($("controller-code"));' %></p>
+      <p><%= link_to_function 'Controller code', 'toggleWithEffect("controller-code");' %></p>
       <div id="controller-code" style="display: none;">
         <%= controller_code(@controller_files) %>
       </div>
       
-      <p><%= link_to_function 'View code', 'toggleWithEffect($("view-code"));' %></p>
+      <p><%= link_to_function 'View code', 'toggleWithEffect("view-code");' %></p>
       <div id="view-code" style="display: none;">
         <%= view_code(@view_files) %>
       </div>
