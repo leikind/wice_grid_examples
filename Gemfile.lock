@@ -1,3 +1,8 @@
+PATH
+  remote: vendor/wice_grid
+  specs:
+    wice_grid (3.0.0.pre1)
+
 GEM
   remote: http://gemcutter.org/
   remote: http://gems.github.com/
@@ -68,7 +73,6 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
-    wice_grid (3.0.0.pre1)
     will_paginate (3.0.pre)
 
 PLATFORMS
@@ -80,5 +84,5 @@ DEPENDENCIES
   mysql
   rails (= 3.0.3)
   thoughtbot-shoulda (= 2.11.1)
-  wice_grid (= 3.0.0.pre1)
+  wice_grid (= 3.0.0.pre1)!
   will_paginate (= 3.0.pre)
