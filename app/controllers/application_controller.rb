@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
       session[:lang] = params[:lang]
     end
 
-    session[:lang] = :nl unless session[:lang]
+    session[:lang] = :en unless session[:lang]
 
     I18n.locale = session[:lang]
   end
