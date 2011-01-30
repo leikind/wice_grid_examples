@@ -1,22 +1,39 @@
 # SQLite version 3.x
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
+
 development:
   adapter: mysql
   database: wice_grid_examples_development
   username: root
-  password: 
+  password:
   host: localhost
+
+# development:
+#   adapter: sqlite3
+#   database: db/wice_grid_example.sqlite3
+#   pool: 5
+#   timeout: 5000
+
+
+# development:
+#   adapter: postgresql
+#   encoding: utf8
+#   database: wice_grid_examples_development
+#   username: postgres
+#   password:
+#   template: template0
+#   host: localhost
 
 test:
   adapter: mysql
   database: wice_grid_examples_test
   username: root
-  password: 
+  password:
   host: localhost
 
 production:
   adapter: mysql
   database: wice_grid_examples_production
-  username: 
-  password: 
+  username:
+  password:
   host: localhost
