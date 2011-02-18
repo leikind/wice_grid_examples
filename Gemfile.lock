@@ -1,7 +1,7 @@
 PATH
   remote: vendor/wice_grid
   specs:
-    wice_grid (3.0.0.pre2)
+    wice_grid (3.0.0.pre3)
 
 GEM
   remote: http://gemcutter.org/
@@ -84,5 +84,5 @@ DEPENDENCIES
   mysql
   rails (= 3.0.3)
   thoughtbot-shoulda (= 2.11.1)
-  wice_grid (= 3.0.0.pre2)!
+  wice_grid (= 3.0.0.pre3)!
   will_paginate (= 3.0.pre)

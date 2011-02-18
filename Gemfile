@@ -7,7 +7,7 @@ gem "mysql"
 
 gem "will_paginate", '3.0.pre'
 
-gem "wice_grid", '3.0.0.pre2', :path => 'vendor/wice_grid'
+gem "wice_grid", '3.0.0.pre3', :path => 'vendor/wice_grid'
 # gem "wice_grid", '3.0.0.pre2'
 
 gem "faker"
