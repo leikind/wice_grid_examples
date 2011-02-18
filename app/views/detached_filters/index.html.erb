@@ -3,7 +3,7 @@
   g.column :column_name => 'ID', :attribute_name => 'id', :detach_with_id => :task_id
 
   g.column :column_name => 'Title', :attribute_name => 'title', :detach_with_id => :title_filter do |task|
-    link_to('Edit', edit_task_path(task.title))
+    task.title
   end
 
   g.column :column_name => 'Priority', :attribute_name => 'priority_id',
