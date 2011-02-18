@@ -16,6 +16,10 @@
 .wice_grid td {
     border-bottom: none;
 }
+
+.wice_grid tr.last_row{
+  background-color: #lightgrey;
+}
 </style>
 
 <%= grid(@tasks_grid, :show_filters => :always) do |g|
@@ -24,22 +28,30 @@
     if task.priority == Priority.urgent
 
       content_tag(:tr,
-        content_tag(:td, 
-          button_to_function('Do not panic', '') + button_to_function('Panic', ''), 
+        content_tag(:td,
+          button_to_function('Do not panic', '') + button_to_function('Panic', ''),
         :colspan => 9),
        :class => 'extra_row')
-                                                                                    # 
+                                                                                    #
     else
       nil
     end
   end
-  
+
+  g.last_row do
+    content_tag(:tr,
+      content_tag(:td,
+        'Last row',
+      :colspan => 9),
+     :class => 'last_row')
+  end
+
   g.row_attributes do |task|
     if task.priority == Priority.urgent
       {:class => 'urgent'}
     end
   end
-  
+
 
   g.column :column_name => 'ID', :attribute_name => 'id', :no_filter => true
 
