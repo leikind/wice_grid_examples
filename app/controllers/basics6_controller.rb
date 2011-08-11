@@ -2,7 +2,7 @@ class Basics6Controller < ApplicationController
   
   # <example>
   def index
-    @tasks_grid = initialize_grid(Task.where(:archived => false),
+    @tasks_grid = initialize_grid(Task.unscoped.where(:archived => false),
      :order => 'tasks.title',
      :order_direction => 'desc',
      # :conditions => ['archived = ?', false],
