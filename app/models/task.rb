@@ -1,4 +1,6 @@
 class Task < ActiveRecord::Base
+
+  default_scope order("title ASC")
   
   belongs_to :created_by, :class_name => 'User'
   belongs_to :project
