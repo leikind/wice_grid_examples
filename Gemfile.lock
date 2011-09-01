@@ -32,8 +32,10 @@ GEM
     arel (2.0.10)
     builder (2.1.2)
     coderay (0.9.5)
+    daemons (1.1.4)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    eventmachine (0.12.10)
     faker (0.3.1)
     i18n (0.5.0)
     mail (2.2.19)
@@ -65,13 +67,17 @@ GEM
       thor (~> 0.14.4)
     rake (0.9.2)
     rdoc (3.8)
+    thin (1.2.11)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     thor (0.14.6)
     thoughtbot-shoulda (2.11.1)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.29)
-    wice_grid (3.0.2)
-    will_paginate (3.0.pre)
+    wice_grid (3.0.3)
+    will_paginate (3.0.0)
 
 PLATFORMS
   ruby
@@ -81,6 +87,7 @@ DEPENDENCIES
   faker
   mysql
   rails (= 3.0.9)
+  thin
   thoughtbot-shoulda (= 2.11.1)
-  wice_grid (= 3.0.2)
-  will_paginate (= 3.0.pre)
+  wice_grid (= 3.0.3)
+  will_paginate (= 3.0.0)
